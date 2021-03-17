@@ -223,8 +223,15 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors( /*code here*/ ) {
-    /*code here*/
+function getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) {
+    let concatList = originalFlavors.concat(newFlavors, seasonalFlavors, regionalFlavors);
+    let randomFlavors = [];
+
+    for (leti = 0; i < 32; i++) {
+        let random = Math.floor(Math.random() * concatList.length);
+        randomFlavors.push(concatList[random]);
+    }
+    return randomFlavors;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
